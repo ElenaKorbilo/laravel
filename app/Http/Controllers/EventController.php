@@ -62,7 +62,7 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+        return view('events.update', ['event' => $event]);
     }
 
     /**
@@ -74,7 +74,9 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|max:25'
+        ]);
     }
 
     /**

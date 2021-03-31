@@ -2,12 +2,12 @@
     Events list
 </h1>
 
-@foreach($events as $event)
-    {{ $event->title}} {{ $event->user->name }}<br>
+ @foreach($events as $event)
+    <a href="{{route('events.edit', ['event' => $event])}}">{{ $event->title}}</a> <br>
 @endforeach
 
-@foreach($users as $user)
+{{--@foreach($users as $user)
     {{$user->name}}<br>
-    @foreach
-    {{ $events->name }} <br>
-@endforeach
+     @foreach()
+    {{ $events->name }} <br> 
+@endforeach --}}
